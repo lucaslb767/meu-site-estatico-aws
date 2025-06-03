@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest # Exemplo, mesmo que não usemos Node.js ativamente aqui, é bom ter um runtime
+    commands:
+      - echo "Nenhuma dependencia para instalar."
+  build:
+    commands:
+      - echo "Nenhuma compilacao necessaria, apenas copiando arquivos..."
+      - echo "Arquivos do site:"
+      - ls -R # Lista os arquivos para vermos no log do CodeBuild
+artifacts:
+  files:
+    - '**/*' # Inclui todos os arquivos e pastas da raiz do repositório
+# base-directory: 'dist' # Se seus arquivos estivessem em uma subpasta 'dist' após um build
